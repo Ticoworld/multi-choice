@@ -1,0 +1,95 @@
+.showcase {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.973) , rgba(48, 2, 87, 0.644)) ,url(../images/showcase.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+.about {
+    background:linear-gradient(to left, rgba(143, 139, 139, 0.301) 0%, rgba(26, 25, 25, 0.589) 100%);
+    z-index: 1;
+    position: relative;
+}
+
+/* .qualities {
+    background:linear-gradient(to right, rgba(46, 16, 101, 0.3) 0%, rgba(91, 33, 182, 0.5) 100%), url(../images/btc.jpg);
+    z-index: 1;
+    position: relative; 
+} */
+
+.water1 {
+    width: 330px;
+    z-index:-1 ;
+    height: 523px;
+    background-color: rgba(36, 2, 36, 0.685);
+    position: absolute;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    overflow: hidden;
+}
+.water2{
+    width: 200px;
+    z-index:1 ;
+    height: 100%;
+    background-color: #2e1065;
+    position: absolute;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    overflow: hidden;
+    right: 0;
+}
+
+
+
+.invest-image {
+    width: max-content;
+}
+
+.underline {
+    height: 2px ;
+    width: 100%;
+    background-color:#2e1065 ;
+}
+.underline2 {
+    height: 1px ;
+    width: 100%;
+    background-color:#606063c2 ;
+}
+.underline3 {
+    height: 1px ;
+    width: 100%;
+    background-color:#6e6e7057 ;
+}
+
+.line {
+    width: 2rem;
+    height: 0.18rem;
+    background-color: white;
+  }
+
+  .l-line {
+    width: 100%;
+    height: 0.12rem;
+    background-color: white;
+    margin: 18px 0;
+  }
+
+.active-invest{ 
+   background-color: whitesmoke; 
+    height: 2px ;
+    width: 100%;
+}
+
+
+
+.q-cont:hover {
+ cursor: pointer;   
+}
+
+.q-cont:hover .q-id {
+    color: #2e1065;
+    
+}
+
+.grid-long {
+    grid-row: 1/3;
+}
