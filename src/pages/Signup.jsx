@@ -86,6 +86,7 @@ const Signup = () => {
                             placeholder="John"
                             value={firstname}
                             onChange={(e)=> setFirstname(e.target.value)}
+                            
                             className="px-3 py-2 pl-10 pr-3 font-semibold placeholder-gray-500 text-black rounded-md border-none ring-2 ring-gray-300 focus:ring-violet-950 outline-none focus:ring-2 w-full transition-all duration-300 ease-in-out"
                             />
                         </div>      
