@@ -3,11 +3,23 @@ import { FiMail } from 'react-icons/fi';
 import {BsEye,BsEyeSlash} from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 const Login = () => {
     const [ShowPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    
     async function loginUser(e) {
             e.preventDefault()
             const response = await fetch('http://localhost:1337/api/login', {
@@ -24,9 +36,16 @@ const Login = () => {
             
             if(data.user) {
                 localStorage.setItem('token', data.user)
-                console.log('login successful')
                 window.location.href = '/dashboard'
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'login succesfull, redirecting to dashboard'
+                    })
             } else {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'please check username and password'
+                })
                 console.log('please check username and password');
             }
             console.log(data);
@@ -35,7 +54,7 @@ const Login = () => {
         <div className="flex items-center justify-center h-full">
             <div className="h-full rounded-xl shadow-2xl py-10 px-5 w-96 my-28">
                 <div className="text-center">
-                    <img src="/src/images/5.png" alt="" />
+                    <img src="../../public/images/5.png" alt="" />
                     <p className="text-xs py-5">Welcome to Multichainfinance, login and enjoy the best investment experience.</p>
                 </div>
                     <form onSubmit={loginUser}>

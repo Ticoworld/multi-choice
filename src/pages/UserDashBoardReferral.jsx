@@ -1,7 +1,21 @@
 import Header from "../components/Header";
 import { FiLink } from "react-icons/fi";
-import { MdContentCopy } from "react-icons/md";
+import {  MdOutlineDone, MdOutlineContentCopy  } from "react-icons/md";
+import { useState } from "react";
+import copy from 'clipboard-copy';
 const UserDashBoardReferral = () => {
+    const [copied, setCopied] = useState(false);
+    const handleCopyToClipboard = () => {
+        const textToCopy = 'Your text here';
+        copy(textToCopy);
+        setCopied(true)
+
+        setTimeout(() => {
+            setCopied(false);
+          }, 2000);
+
+        console.log('Text copied to clipboard:', textToCopy);
+      };
     return (<div>
         <Header />
       <div className="px-28 py-12 pb-32">
@@ -14,7 +28,9 @@ const UserDashBoardReferral = () => {
                     <div className="border-gray-400 border text-md px-2 py-1 rounded-sm"><FiLink /></div>
                         <div className="text-sm">multichainfinance.com/user/johnnewman</div>  
                 </div>   
-                        <div className="border-gray-400 border text-md px-2 py-1 rounded-sm"><MdContentCopy /></div>
+                        <div className="border-gray-400 border text-md px-2 py-1 rounded-sm cursor-pointer" onClick={handleCopyToClipboard}>
+                                {copied ? <MdOutlineDone /> : <MdOutlineContentCopy />}
+                         </div>
                 </div>
             </div>
         </div>

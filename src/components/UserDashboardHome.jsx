@@ -1,42 +1,33 @@
 import { BsArrowRight } from "react-icons/bs";
 import {IoIosArrowRoundUp,IoIosArrowRoundDown} from 'react-icons/io';
-import { MdContentCopy } from "react-icons/md";
+import {  MdOutlineDone, MdOutlineContentCopy  } from "react-icons/md";
 import { FiLink } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import copy from 'clipboard-copy'
+import { useState } from "react";
+import './dashboard.css';
+const UserDashboardHome = ( {userData} ) => {
 
+    const [copied, setCopied] = useState(false);
+    const handleCopyToClipboard = () => {
+        const textToCopy = 'Your text here';
+        copy(textToCopy);
+        setCopied(true)
 
-const UserDashboardHome = () => {
-    const navigate = useNavigate()
-    const [userData, setUserData] = useState()
+        setTimeout(() => {
+            setCopied(false);
+          }, 2000);
 
-    useEffect(()=>{
-        if(localStorage.getItem('token')){
-            const getData = async()=>{
-                const req = await fetch(`http://localhost:1337/api/getData`,{
-                    headers: {
-                    'x-access-token': localStorage.getItem('token')
-                    }
-                })
-                const res = await req.json()
-                setUserData(res);
+        console.log('Text copied to clipboard:', textToCopy);
+      };
 
-                if (res.status === 'error') {
-                    navigate('/login')
-                }
-            }
-            getData()
-        }
-        else{
-            navigate('/login')
-        }
-    },[])
-  return <div className="bg-gray-200">
+    return <div className="bg-gray-200">
     <div className="px-28 py-6">
         <div className="">
             <p className="text-gray-500">Welcome!</p>
             <div className="flex justify-start items-center gap-3 py-3">
-                <h2 className="font-semibold text-xl">username</h2>
+                <h2 className="font-semibold text-xl uppercase">{userData ? userData.firstname: ''}</h2>
                 <Link to="/investments">  
                 <div className="flex items-center gap-2 rounded-md bg-gray-50 px-6 py-2 hover:bg-violet-200"><span>Active investment</span><BsArrowRight className="text-sm"/></div></Link>
             </div>
@@ -81,7 +72,7 @@ const UserDashboardHome = () => {
             <div className="bg-gray-50 p-5 rounded-md flex-1">
                 <p className="text-gray-500">Balance in Account</p>
                 <div className="flex items-center gap-3 justify-start py-2">
-                    <p className="text-2xl py-2">$0.00 USD</p>
+                    <p className="text-2xl py-2">${userData ? userData.funded :`0.00`} USD</p>
                     <IoIosArrowRoundUp className="text-2xl"/>
                 </div>
                 <p className="text-gray-500 text-sm">Total Withdawals</p>
@@ -114,7 +105,9 @@ const UserDashboardHome = () => {
                     <div className="border-gray-400 border text-md px-2 py-1 rounded-sm"><FiLink /></div>
                         <div className="text-sm">multichainfinance.com/user/johnnewman</div>  
                 </div>   
-                        <div className="border-gray-400 border text-md px-2 py-1 rounded-sm"><MdContentCopy /></div>
+                        <div className="border-gray-400 border text-md px-2 py-1 rounded-sm cursor-pointer" onClick={handleCopyToClipboard}>
+                                {copied ? <MdOutlineDone /> : <MdOutlineContentCopy />}
+                        </div>
                 </div>
                 </div>
                 
@@ -140,5 +133,12 @@ const UserDashboardHome = () => {
     </div>   
   </div>;
 };
+
+UserDashboardHome.propTypes = {
+    userData: PropTypes.shape({
+      firstname: PropTypes.string,
+      email: PropTypes.string,
+    }),
+  };
 
 export default UserDashboardHome;

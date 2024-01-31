@@ -4,7 +4,7 @@ const About = () => {
   <div className=" about bg-violet-700">
     <div className='water1'/>
     <div className=" px-28 py-12">
-        <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white" >ABOUT US</p></div>
+        <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white">ABOUT US</p></div>
         <div>
             <div className="font-bold text-4xl text-violet-100 leading-normal" data-aos="fade-up">
             Learn More About Multi <br />Chain Finance

@@ -6,6 +6,7 @@ import { FiMail } from 'react-icons/fi';
 import {BsEye,BsEyeSlash} from 'react-icons/bs'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const Signup = () => {
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
@@ -17,33 +18,56 @@ const Signup = () => {
     const [confirmpassword, setConfirmpassword] = useState('')
     const [ShowPassword, setShowPassword] = useState(false);
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
 
     const navigate = useNavigate()
     async function registerUser (e) {
         e.preventDefault()
-      const response = await fetch('http://localhost:1337/api/register', { 
-        method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstname,
-                lastname,
-                username,
-                email,
-                phone,
-                country,
-                password,
-                confirmpassword,
-            }),
-            
-        })
-        const data = await response.json()
-
-        if(data.status === 'ok') {
-            navigate.push('/login')
+        if(firstname == '' || lastname == ''|| email == ''|| password == ''|| username == ''|| confirmpassword == ''|| country == ''|| phone == '') {
+            console.log('please fill in the empty fields');
+        }  else if(confirmpassword !== password){
+            console.log('confirm password must be same with password');
         }
-        console.log(data);
+        
+        else {
+            const response = await fetch('http://localhost:1337/api/register', { 
+                method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstname,
+                        lastname,
+                        username,
+                        email,
+                        phone,
+                        country,
+                        password,
+                        confirmpassword,
+                    }),
+                    
+                })
+                const data = await response.json()
+        
+                if(data.status === 'ok') {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Registration succesfull, redirecting to login page'
+                    })
+                    navigate('/login')
+                }
+                console.log(data);
+        }
     }
   return (
     <div className="flex items-center justify-center h-full">

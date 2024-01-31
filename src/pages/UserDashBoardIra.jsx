@@ -2,7 +2,36 @@ import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import Swal from "sweetalert2";
+import { HiArrowRight, HiXMark } from "react-icons/hi2";
 const UserDashBoardIra = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [CheckOutModal, setCheckOutModal] = useState(false);
+    const [depositAmount, setDepositAmount] = useState('');
+    const [modalContent, setModalContent] = useState({});
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+
+      const openModal = (max, min, type) => {
+        setModalContent({ max, min , type});
+        setIsModalOpen(true);
+        
+      };
+    
+      const closeModal = () => {
+        setIsModalOpen(false);
+        setDepositAmount('')
+      };
     const [withdrawMethods,setWithdrawalMethods] = useState([
         {
           id:1,
@@ -88,7 +117,9 @@ const UserDashBoardIra = () => {
                                         <p>{withdraw.duration}%</p>
                                     </div>
                                 </div>
-                                <div className="text-violet-950 bg-violet-300 rounded-md text-center w-full py-2 font-semibold">Choose Plan</div>
+                                <div className="text-violet-950 bg-violet-300 rounded-md text-center w-full py-2 font-semibold cursor-pointer" 
+                                    onClick={() => openModal(withdraw.max, withdraw.min, withdraw.type)}
+                                >Choose Plan</div>
                             </div>
                         </div>
                     ))
@@ -99,6 +130,48 @@ const UserDashBoardIra = () => {
         <p>Investment History</p> <div className="text-3xl"><IoIosArrowRoundForward/></div> </div>
         </Link>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center modal-container">
+          <div className="modal shadow-md bg-white w-2/5 p-4 rounded-md">
+            <div className="modal-content">
+              <div className="flex items-center justify-between pb-3">
+                <div>
+                  <p className="font-bold text-xl text-violet-950">Plan Selected: {modalContent.type}</p>
+                  <p className="text-sm text-violet-700 py-1">Min: {modalContent.min} - Max: {modalContent.max}</p>
+                </div>
+                <img src={modalContent.imageSrc} alt="" className="w-10 m-auto" />
+                <div className="text-indigo-950 font-bold text-3xl cursor-pointer" onClick={closeModal}><HiXMark /></div>
+              </div>
+              <div className="underline3" />
+              <div className="flex justify-between items-center py-10">
+                <form>
+                  <input               
+                    type="tel" 
+                    placeholder='0.00'
+                    value={depositAmount}
+                    onChange={(e)=>{
+                    setDepositAmount((e.target.value))
+                  }}
+                   className="sm outline outline-1 outline-gray-400 w-470 py-2 rounded-sm text-md px-3" />
+                </form>
+                <p className="bg-gray-400 font-bold usd">USD</p>
+              </div>
+              <div className="underline3" />
+              <div className="flex items-center justify-end pt-7">
+                <div className="flex gap-4">
+                  <button className="noselect" onClick={closeModal}>
+                    <span className="text">Close</span><span className="icon"><HiXMark className="svg" /></span></button>
+                  <button className="noselect arrow-right" onClick={()=>{
+                    
+                  }}>
+                    <span className="text">Next</span><span className="icon"><HiArrowRight className="svg" /></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
   </div>);
 };
 
