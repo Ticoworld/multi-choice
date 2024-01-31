@@ -27,7 +27,6 @@ const Qualities = () => {
   ])
   return (
     <div className="qualities relative bg-violet-800">
-        {/* <div className="water2"/> */}
         <div className=" px-28 py-12">
           <div>
               <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white" >WHY CHOOSE US</p></div> 
@@ -40,7 +39,7 @@ const Qualities = () => {
           <div className='grid grid-flow-col'>
             {
               qualities.map(quality => (
-                  <div key={quality.key} className='h-full w-80 bg-white rounded-md p-4 pb-4 q-cont' data-aos="fade-up">
+                  <div key={quality.id} className='h-full w-80 bg-white rounded-md p-4 pb-4 q-cont' data-aos="fade-up">
                                   <p className='text-right text-5xl font-bold py-2 text-violet-200 q-id' >0{quality.id}</p>
                                   <div className='text-violet-700 text-6xl py-2'>{quality.icon}</div>
                                   <h3 className='font-bold text-base py-2'>{quality.title}</h3>
