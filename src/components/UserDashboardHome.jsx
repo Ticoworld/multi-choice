@@ -13,13 +13,13 @@ const UserDashboardHome = () => {
     useEffect(()=>{
         if(localStorage.getItem('token')){
             const getData = async()=>{
-                const req = await fetch(`/api/getData`,{
+                const req = await fetch(`http://localhost:1337/api/getData`,{
                     headers: {
                     'x-access-token': localStorage.getItem('token')
                     }
                 })
                 const res = await req.json()
-                setUserData(res)
+                setUserData(res);
 
                 if (res.status === 'error') {
                     navigate('/login')
