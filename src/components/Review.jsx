@@ -1,20 +1,19 @@
 import {ImQuotesLeft} from 'react-icons/im'
 import {ImQuotesRight} from 'react-icons/im'
-import {BsStarHalf} from 'react-icons/bs'
 import { IoStar } from "react-icons/io5";import { useState } from 'react';
 const Review = () => {
     const [reviews, setReviews] = useState(
         [
             {
                 id:1,
-                img:`/src/images/rev5.jpg`,
+                img:`/rev5.jpg`,
                 name:`John D.`,
                 rev:`I've been investing with MultichainFinance for over a year now, and I couldn't be happier with the results. The team's expertise in utilizing IRAs for real estate and cryptocurrencies is truly remarkable. They've not only helped me diversify my investment portfolio but also guided me through the entire process with professionalism and transparency.I've achieved financial stability and peace of mind.
                 `
             },
             {
                 id:2,
-                img:`/src/images/rev2.jpg`,
+                img:`/rev2.jpg`,
                 name:`mary J.`,
                 rev:`MultichainFinance has exceeded my expectations in every way possible. As someone who wanted to explore investment opportunities beyond traditional options, I was initially hesitant. However, the team's in-depth knowledge and personalized approach put my mind at ease. My investments have shown consistent growth, and I feel confident knowing that my financial future is in capable hands.
 
@@ -22,7 +21,7 @@ const Review = () => {
             },
             {
                 id:3,
-                img:`/src/images/rev.jpg`,
+                img:`/rev.jpg`,
                 name:`Rose M..`,
                 rev:` Choosing MultichainFinance for my IRA investments was undoubtedly one of the best decisions I've made. The team's deep understanding of both real estate and crypto markets is evident in their well-researched and strategic investment approach. They take the time to explain the intricacies of each investment, ensuring I'm well-informed and comfortable with the decisions being made.
                 `

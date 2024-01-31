@@ -61,7 +61,7 @@ const UserDashBoardTransactions = () => {
             </table>
           ) : (
             <div className="text-center">
-              <img src="/src/images/Data_PortabilityPrivacy_BANNER_003.gif" alt="" className="w-500 py-24" />
+              <img src="/Data_PortabilityPrivacy_BANNER_003.gif" alt="" className="w-500 py-24" />
               <p className="text-gray-700 text-center">You have not performed any transactions yet.</p>
               <Link to="/fundwallet">
                 <div className="text-violet-50 bg-violet-800 rounded-md text-center w-2/3 py-2 font-semibold m-auto flex items-center justify-center gap-3 my-7">

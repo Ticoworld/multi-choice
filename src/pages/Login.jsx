@@ -54,7 +54,7 @@ const Login = () => {
         <div className="flex items-center justify-center h-full">
             <div className="h-full rounded-xl shadow-2xl py-10 px-5 w-96 my-28">
                 <div className="text-center">
-                    <img src="/images/5.png" alt="" />
+                    <img src="/5.png" alt="" />
                     <p className="text-xs py-5">Welcome to Multichainfinance, login and enjoy the best investment experience.</p>
                 </div>
                     <form onSubmit={loginUser}>

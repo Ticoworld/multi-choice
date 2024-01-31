@@ -43,7 +43,7 @@ const UserDashboardHome = ( {userData} ) => {
                 <p className="font-semibold">$.000</p>
                 <div className="flex gap-4">
                     <p className="text-gray-500">Current Invested IRA</p>
-                    <img src="/src/images/bar.png" alt="" className="w-28 self-end"/>
+                    <img src="/bar.png" alt="" className="w-28 self-end"/>
                 </div>
             </div>
             <div className="bg-gray-50 p-7 rounded-md flex-1">
@@ -66,7 +66,7 @@ const UserDashboardHome = ( {userData} ) => {
                        <p className="text-xl">0.00 USD</p> 
                     </div>
                     
-                    <img src="/src/images/bar2.png" alt="" className="w-32 self-end"/>
+                    <img src="/bar2.png" alt="" className="w-32 self-end"/>
                 </div>
             </div>
             <div className="bg-gray-50 p-5 rounded-md flex-1">
@@ -82,7 +82,7 @@ const UserDashboardHome = ( {userData} ) => {
                         <p className="text-gray-500 text-sm text-nowrap">Withdrawable Profit After Duration</p>
                         <p className="text-xl">$0.00 USD</p>
                     </div>
-                    <img src="/src/images/bar3.png" alt="" className="self-start w-24"/>
+                    <img src="/bar3.png" alt="" className="self-start w-24"/>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ const UserDashboardHome = ( {userData} ) => {
                     </div>
                 </div>
                 <div className="mt-6">
-                    <img src="/src/images/bar4.png" alt=""  className="w-full"/>
+                    <img src="/bar4.png" alt=""  className="w-full"/>
                 </div>
                 
             </div>

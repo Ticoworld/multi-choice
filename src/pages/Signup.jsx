@@ -73,7 +73,7 @@ const Signup = () => {
     <div className="flex items-center justify-center h-full">
         <div className="h-full rounded-xl shadow-2xl py-10 px-5 w-96 my-28">
             <div className="text-center">
-                <img src="/src/images/5.png" alt="" />
+                <img src="/5.png" alt="" />
                 <p className="text-xs py-5">Get started with Multichainfinance, just create an account and enjoy the experience. Get started to get $10 bonus</p>
             </div>
                 <form onSubmit={registerUser}>

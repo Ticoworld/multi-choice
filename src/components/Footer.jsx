@@ -5,11 +5,11 @@ const Footer = () => {
             <div className=" px-28 py-12">
                     <h3 className="text-center text-lg font-semibold text-violet-100">Trusted Partners</h3>
                     <div className="flex justify-between p-3">
-                        <img src="/src/images/a-xs-light.png" alt="" />
-                        <img src="/src/images/b-xs-light.png" alt="" />
-                        <img src="/src/images/c-xs-light.png" alt="" />
-                        <img src="/src/images/d-xs-light.png" alt="" />
-                        <img src="/src/images/e-xs-light.png" alt="" />
+                        <img src="/a-xs-light.png" alt="1" />
+                        <img src="/b-xs-light.png" alt="2" />
+                        <img src="/c-xs-light.png" alt="3" />
+                        <img src="/d-xs-light.png" alt="4" />
+                        <img src="/e-xs-light.png" alt="5" />
                     </div>
                     <div className="text-violet-300">
                         <div className="nav flex justify-center gap-32 py-3">

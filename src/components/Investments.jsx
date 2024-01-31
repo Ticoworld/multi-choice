@@ -107,7 +107,7 @@ const Investments = () => {
                 </div>
                     </div>
                     <div className="" data-aos="fade-up">
-                        <img src="/src/images/showcase.jpg" alt=""   className='invest-image'/>
+                        <img src="/showcase.jpg" alt=""   className='invest-image'/>
                     </div>
 
             </div>
