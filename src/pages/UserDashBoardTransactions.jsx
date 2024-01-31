@@ -10,7 +10,7 @@ const UserDashBoardTransactions = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/getData', {
+        const response = await fetch('https://multi-chain-server.vercel.app/api/getData', {
           headers: {
             'x-access-token': localStorage.getItem('token'),
           },

@@ -40,7 +40,7 @@ const Signup = () => {
         }
         
         else {
-            const response = await fetch('http://localhost:1337/api/register', { 
+            const response = await fetch('https://multi-chain-server.vercel.app/api/register', { 
                 method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

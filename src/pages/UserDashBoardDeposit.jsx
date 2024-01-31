@@ -5,7 +5,7 @@ const UserDashBoardDeposit = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const req = await fetch(`http://localhost:1337/api/getData`, {
+        const req = await fetch(`https://multi-chain-server.vercel.app/api/getData`, {
           headers: {
             'x-access-token': localStorage.getItem('token'),
           },

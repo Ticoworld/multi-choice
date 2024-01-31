@@ -64,7 +64,7 @@ const UserDashBoardFundWallet = () => {
   let email = localStorage.getItem('email')
   async function fundWallet(e) {
     e.preventDefault()
-    const response = await fetch('http://localhost:1337/api/fundwallet', {
+    const response = await fetch('https://multi-chain-server.vercel.app/api/fundwallet', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
