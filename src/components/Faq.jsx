@@ -53,8 +53,8 @@ const Faq = () => {
                         faqs.map(faq=> (
                             <div key={faq.id} className='bg-violet-950 my-2 p-5 rounded-md' data-aos="fade-up">
                                 <div className='flex justify-between'>
-                                    <h3 className='font-semi-bold text-xl text-violet-100'>{faq.question}</h3>
-                                    <AiOutlinePlus onClick={()=>{dropDown(faq.id)}} className={ `cursor-pointer text-white bg-violet-800 p-2 h-10 w-10 text-2xl rounded-full ${faq.active === true?`rotate-180 transition-all duration-300`:`-rotate-180  transition-all duration-300`}`}/>
+                                    <h3 className='font-semi-bold text-md text-violet-100 pr-2'>{faq.question}</h3>
+                                    <AiOutlinePlus onClick={()=>{dropDown(faq.id)}} className={ `cursor-pointer text-white bg-violet-800 p-2 max-h-20 max-w-20 text-3xl rounded-full ${faq.active === true?`rotate-180 transition-all duration-300`:`-rotate-180  transition-all duration-300`}`}/>
                                 </div>
                                 <div className={`text-violet-400 pt-5 `} style={{display:faq.active? 'block' : 'none'}}>
                                     <p>{faq.answer}</p>

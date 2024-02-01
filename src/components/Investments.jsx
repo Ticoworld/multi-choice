@@ -86,14 +86,13 @@ const Investments = () => {
                     <div className='flex gap-8 py-4'>
                 {
                     tabs.map(tab=> (
-                        <div  key={tab.id} onClick={()=>{changeItems(tab.id)}} className='cursor-pointer text-sm' data-aos="fade-up">
+                        <div  key={tab.id} onClick={()=>{changeItems(tab.id)}} className='cursor-pointer text-xs' data-aos="fade-up">
                             <p className={tab.active === true ? `text-blue-50` : `text-violet-300`}>{tab.title}</p>
                             <div className={tab.active === true ? `active-invest`:'underline'}/>
                         </div>
                     ))
                 }
                 </div>
-
                 <div>
                     {
                         tabs.map(tab => (
@@ -109,7 +108,7 @@ const Investments = () => {
                     <div className="" data-aos="fade-up">
                         <img src="/showcase.jpg" alt=""   className='invest-image'/>
                     </div>
-            </div>
+                    </div>
                     </div>
             </div>
         </div>

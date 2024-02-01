@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {RiRocketFill} from 'react-icons/ri'
 const Showcase = () => {
   return (
-    <div className=" showcase lg:lg:px-28 px-10 px-10">
+    <div className=" showcase lg:lg:px-28 px-10">
         <div className="showcase-content text-blue-100">
           <div className="m-auto pt-16">
           <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-normal pt-11 pb-9 text-blue-50">

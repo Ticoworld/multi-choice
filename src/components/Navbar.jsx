@@ -14,15 +14,15 @@ const Navbar = () => {
         <div className={`lg:flex lg:static lg:bg-transparent lg:justify-between lg:flex-row lg:auto ${isMobileMenuOpen ? ` justify-between items-center flex-col gap-4 fixed top-12 right-14 bg-violet-200 text-violet-950 rounded-md transition-all`: `hidden`}`}>
             
             <nav className="flex flex-col justify-start items-start lg:flex-row">
-            <Link className="px-14 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Home</Link>
+            <Link className="px-16 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Home</Link>
             <div className="underline3 lg:hidden"></div>
-            <Link className="px-14 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">About</Link>
+            <Link className="px-16 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">About</Link>
             <div className="underline3 lg:hidden"></div>
-            <Link className="px-14 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Faqs</Link>
+            <Link className="px-16 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Faqs</Link>
             <div className="underline3 lg:hidden"></div>
-            <Link className="px-14 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Our Policy</Link>
+            <Link className="px-16 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Our Policy</Link>
             <div className="underline3 lg:hidden"></div>
-            <Link className="px-14 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Buy Bitcoin</Link>
+            <Link className="px-16 text-violet-950 font-bold my-2 py-2 w-full lg:w-auto hover:text-violet-800 lg:text-violet-50 lg:px-5">Buy Bitcoin</Link>
             <div className="underline3 lg:hidden"></div> 
         </nav>
         <div className="flex gap-3 my-3 justify-between px-2"> 

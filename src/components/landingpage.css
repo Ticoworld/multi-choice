@@ -1,6 +1,6 @@
 .showcase {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.973) , rgba(48, 2, 87, 0.644)) ,url(/showcase.jpg);
-    height: 100vh;
+    height: 85vh;
     background-size: cover;
 }
 
