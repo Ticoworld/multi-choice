@@ -30,16 +30,17 @@ const Review = () => {
     )
   return(
     <div className='bg-violet-950 relative'>
-        <div className=" px-28 py-12">
+        <div className=" lg:px-28 px-10 py-12">
         <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white">WHAT OUR CUSTOMERS ARE SAYING</p>
             </div> 
-            <div className="font-bold text-4xl text-violet-100 leading-normal pb-3" data-aos="fade-up">
+            <div className="font-bold md:text-3xl lg:text-4xl text-2xl text-violet-100 leading-normal pb-3" data-aos="fade-up">
             Customer Reviews
             </div>
-            <div className='grid grid-flow-col gap-7' >
+            <div className='flex justify-center items-center min-h-screen mt-5'>
+            <div className='grid grid-cols-1 gap-7 xl:grid-cols-3 md:grid-cols-2' >
             {
                 reviews.map(review => (
-                    <div key={review.id} className='bg-violet-100 px-6 py-4 rounded-md z-10' data-aos="fade-up">
+                    <div key={review.id} className='bg-violet-100 px-6 py-4 rounded-md z-10 w-80' data-aos="fade-up">
                         <div className="flex items-center">
                             <div className='h-32 w-32 '>
                                 <img src={review.img} alt=""  className='p-2 w-full h-full bg-cover rounded-full object-cover'/>
@@ -66,7 +67,7 @@ const Review = () => {
                 ))
             }
             </div>
-            
+            </div>
         </div>
     </div>
   ) ;

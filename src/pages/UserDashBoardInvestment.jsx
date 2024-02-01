@@ -2,7 +2,7 @@ import Header from "../components/Header";
 const UserDashBoardInvestment = () => {
     return (<div>
         <Header />
-      <div className="px-28 py-12 pb-32">
+      <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
             <img src="/preview.gif" alt="" className="w-500 py-3"/>
             <p className="text-gray-700 text-center">you have not invested yet, click the button below <br /> to make your first investment </p>

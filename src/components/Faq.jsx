@@ -40,10 +40,10 @@ const Faq = () => {
         
     }
   return <div className="faq  bg-violet-800">
-            <div className=" px-28 py-12">
+            <div className=" lg:px-28 px-10 py-12">
                     <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white">FAQ</p>
                      </div> 
-                <div className="font-bold text-4xl text-violet-100 leading-normal" data-aos="fade-up">
+                <div className="font-bold md:text-3xl lg:text-4xl text-2xl text-violet-100 leading-normal" data-aos="fade-up">
                     Frequently Asked Questions
                 </div>
                 <p className="text-violet-100 py-5 text-lg leading-6 font-semibold" data-aos="fade-up">We’ve provided some information about Multichainfinance, Multichainfinance Plans,  cryptocurrencies, <br />and few other common questions you might want to ask. If you have any other questions, <br /> contact our live support system or email address.</p>

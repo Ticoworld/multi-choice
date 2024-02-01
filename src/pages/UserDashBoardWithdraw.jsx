@@ -69,7 +69,7 @@ const UserDashBoardWithdraw = () => {
     return (
     <div className="bg-white">
     <Header />
-    <div className="px-28 py-12 pb-32">
+    <div className="lg:px-28 px-10 py-12 pb-32">
     <div className="text-center py-5">
         <p className="text-md font-semibold">Choose An Option</p>
         <h3 className="text-violet-950 font-semibold text-4xl">withdrawal Methods</h3>

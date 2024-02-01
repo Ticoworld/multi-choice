@@ -3,7 +3,7 @@ import Header from "../components/Header";
 const UserDashBoardWithDrawLog = () => {
     return (<div>
         <Header />
-      <div className="px-28 py-12 pb-32">
+      <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
             <img src="/view.gif" alt="" className="w-400 py-3"/>
             <p className="text-gray-700">you have not performed any withdrawal yet, click below to deposit and start transacting</p>

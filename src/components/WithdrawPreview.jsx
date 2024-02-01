@@ -9,7 +9,7 @@ const WithdrawPreview = ({toggle}) => {
                         <h2 className="uppercase font-bold text-2xl text-violet-600 py-3">Withrawal Preview</h2>
                         <p className="text-sm">Review Withdrawal details</p>
                     </div>
-                <div className="flex space-between px-28 gap-24 my-5" >
+                <div className="flex space-between lg:px-28 px-10 gap-24 my-5" >
                     <div className="shadow-md px-3 py-4 w-72">
                         <div className="border px-2 py-2 my-2">
                             Current Balance:

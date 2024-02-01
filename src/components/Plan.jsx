@@ -65,13 +65,14 @@ const Plan = () => {
         ])
   return (
     <div className="bg-violet-700">
-        <div className=" px-28 py-12">
+        <div className=" lg:px-28 px-10 py-12">
         <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white">OUR PLANS</p> </div> 
-                <div className="font-bold text-4xl text-violet-100 leading-normal" data-aos="fade-up">
+                <div className="font-bold md:text-3xl lg:text-4xl text-2xl text-violet-100 leading-normal" data-aos="fade-up">
                     CHOOSE AN INVESTMENT PLAN
                 </div>
                 <p className="text-violet-100 py-5 text-lg leading-6 font-semibold" data-aos="fade-up">choose an investment plan of your choice, but remember , the bigger the <br /> investment the bigger the return</p>
-                <div className="grid grid-cols-3 justify-center gap-4">
+                <div className='flex justify-center items-center min-h-screen mt-5'>
+                <div className="grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 justify-center gap-4">
                     {
                         withdrawMethods.map(withdrawmethod => (
                             <div key={withdrawmethod.id} className="h-full w-80 bg-violet-950 py-5 rounded-md px-5 text-violet-100" data-aos="fade-up">
@@ -109,6 +110,7 @@ const Plan = () => {
                         ))
                     }
                 </div>
+              </div>
         </div>
     </div>
   );

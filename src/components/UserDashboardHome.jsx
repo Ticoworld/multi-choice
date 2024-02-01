@@ -23,7 +23,7 @@ const UserDashboardHome = ( {userData} ) => {
       };
 
     return <div className="bg-gray-200">
-    <div className="px-28 py-6">
+    <div className="lg:px-28 px-10 py-6">
         <div className="">
             <p className="text-gray-500">Welcome!</p>
             <div className="flex justify-start items-center gap-3 py-3">

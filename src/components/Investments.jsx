@@ -70,23 +70,23 @@ const Investments = () => {
    
   return (
     <div className=" bg-violet-700">
-        <div className=" px-28 py-12">
+        <div className=" lg:px-28 px-10 py-12">
             <div className=''>
                     <div>
                     <div className="head flex items-center gap-1" data-aos="fade-up"><div className="line"/><p className="font-bold text-white">OUR MULTI-MILLION DOLLAR ASSETS</p>
             </div> 
-            <div className="font-bold text-4xl text-violet-100 leading-normal" data-aos="fade-up">
+            <div className="font-bold md:text-3xl lg:text-4xl text-2xl text-violet-100 leading-normal" data-aos="fade-up">
             Industries We Invest In
             </div>
             <div className="text-violet-200 py-5 leading-7 font-semibold" data-aos="fade-up">
             Here are our major investments from which we build investors' profits.  <br /> Theseinvestments and their underlying assets were carefully selected,  <br />using high-end fundamental and technical analysis.
             </div>
-            <div className='flex justify-between items-center gap-5'>
+            <div className='flex justify-between items-center gap-5 flex-col lg:flex-row'>
                     <div>
                     <div className='flex gap-8 py-4'>
                 {
                     tabs.map(tab=> (
-                        <div  key={tab.id} onClick={()=>{changeItems(tab.id)}} className='cursor-pointer' data-aos="fade-up">
+                        <div  key={tab.id} onClick={()=>{changeItems(tab.id)}} className='cursor-pointer text-sm' data-aos="fade-up">
                             <p className={tab.active === true ? `text-blue-50` : `text-violet-300`}>{tab.title}</p>
                             <div className={tab.active === true ? `active-invest`:'underline'}/>
                         </div>
@@ -109,7 +109,6 @@ const Investments = () => {
                     <div className="" data-aos="fade-up">
                         <img src="/showcase.jpg" alt=""   className='invest-image'/>
                     </div>
-
             </div>
                     </div>
             </div>

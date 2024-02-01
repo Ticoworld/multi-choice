@@ -18,7 +18,7 @@ const UserDashBoardReferral = () => {
       };
     return (<div>
         <Header />
-      <div className="px-28 py-12 pb-32">
+      <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
             <img src="/eadb74787dda41cc6333341e55293432.gif" alt="" className="w-500 py-3"/>
             <p className="text-gray-700 text-center">you haven't referred any user yet, click below to copy your <br /> referral link to earn 10% of any deposit made by user</p>

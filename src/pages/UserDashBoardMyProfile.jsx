@@ -4,7 +4,7 @@ const UserDashBoardMyProfile = () => {
   return (
     <div className="bg-violet-100">
         <Header />
-        <div className="px-28 py-10">
+        <div className="lg:px-28 px-10 py-10">
             <div className="text-center py-5">
                 <h3 className="text-violet-950 font-semibold text-4xl">Profile Settings</h3>
                 <p className="text-sm font-medium py-4 text-gray-700">make changes to your profile and update</p>

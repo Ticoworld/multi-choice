@@ -26,7 +26,7 @@ const UserDashBoardDeposit = () => {
   return (
     <div>
       <Header />
-      <div className="px-28 py-12 pb-32">
+      <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
   
           {depositHistory !== undefined && depositHistory.length > 0 ? (

@@ -6,8 +6,9 @@ import {CgArrowsExchangeV} from 'react-icons/cg'
 const Info = () => {
   return (
     <div className='bg-violet-950'>
-        <div className=" px-28 py-12">
-            <div className='grid grid-cols-3 gap-3'>
+        <div className=" lg:px-28 px-10 py-12">
+        <div className='flex justify-center items-center min-h-screen mt-5'>
+            <div className='grid xl:grid-cols-3 md:gap-10 gap-4 grid-cols-1 md:grid-cols-2'>
                 <div className="bg-violet-200 h-full grid w-80 rounded-md py-6 px-4 grid-long " data-aos="fade-up">
                     <div className="flex flex-col gap-5 justify-between">
                         <FaGlobeAmericas  className="text-5xl text-violet-950"/>
@@ -55,10 +56,9 @@ const Info = () => {
                             <p className='text-gray-600'>Successful Deposits</p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            
+            </div>
         </div>
     </div>
     );
