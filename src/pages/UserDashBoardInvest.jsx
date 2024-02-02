@@ -105,11 +105,13 @@ const UserDashBoardInvest = () => {
           <h3 className="text-violet-950 font-semibold text-4xl">Investment Plans</h3>
           <p className="text-xs font-medium py-2 text-gray-700">Choose an investment plan to start earning immediately</p>
       </div>
-            <div className="grid grid-cols-3 gap-8 py-16">
+      <div className='flex justify-center items-center min-h-screen mt-5'>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16">
                 {
                     withdrawMethods.map(withdraw => (
                         <div key={withdraw.id}>
-                            <div className="h-full rounded-md  shadow p-10">
+                            <div className="h-full rounded-md shadow p-10">
                                 <div className="pb-5">
                                     <h2 className="text-violet-950 font-bold capitalize text-3xl text-center pb-5">{withdraw.type}</h2>
                                     <div className="flex items-center justify-between gap-4 py-1 pt-2">
@@ -157,6 +159,7 @@ const UserDashBoardInvest = () => {
                     ))
                 }
             </div>
+            </div>
             <Link to='/investments'>
             <div className="text-violet-100 bg-violet-950 rounded-md text-center w-60 py-2 font-semibold m-auto flex items-center justify-center gap-3">
         <p>Investment History</p> <div className="text-3xl"><IoIosArrowRoundForward/></div> </div>
@@ -165,7 +168,7 @@ const UserDashBoardInvest = () => {
 
       {isModalOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center modal-container">
-          <div className="modal shadow-md bg-white w-2/5 p-4 rounded-md">
+          <div className="modal shadow-md bg-white w-350 p-4 rounded-md">
             <div className="modal-content">
               <div className="flex items-center justify-between pb-3">
                 <div>
@@ -173,11 +176,11 @@ const UserDashBoardInvest = () => {
                   <p className="text-sm text-violet-700 py-1">Min: {modalContent.min} - Max: {modalContent.max}</p>
                 </div>
                 <img src={modalContent.imageSrc} alt="" className="w-10 m-auto" />
-                <div className="text-indigo-950 font-bold text-3xl cursor-pointer" onClick={closeModal}><HiXMark /></div>
+                <div className="text-indigo-950 font-bold text-3xl cursor-pointer self-start" onClick={closeModal}><HiXMark /></div>
               </div>
               <div className="underline3" />
-              <div className="flex justify-between items-center py-10">
-                <form>
+              <div className="flex justify-between items-center py-10 w-320">
+                <form className="flex-grow">
                   <input               
                     type="tel" 
                     placeholder='0.00'
@@ -185,9 +188,9 @@ const UserDashBoardInvest = () => {
                     onChange={(e)=>{
                     setDepositAmount((e.target.value))
                   }}
-                   className="sm outline outline-1 outline-gray-400 w-470 py-2 rounded-sm text-md px-3" />
+                   className="sm outline outline-1 outline-gray-400 w-full py-2 rounded-sm text-md px-3" />
                 </form>
-                <p className="bg-gray-400 font-bold usd">USD</p>
+                <p className="bg-gray-400 font-bold usd" style={{ width: '40px' }}>USD</p>
               </div>
               <div className="underline3" />
               <div className="flex items-center justify-end pt-7">

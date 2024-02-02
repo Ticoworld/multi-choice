@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaCheckCircle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 const Plan = () => {
     const [withdrawMethods,setWithdrawalMethods] = useState([
         {
@@ -104,7 +105,9 @@ const Plan = () => {
                                         <p>maximum deposit - {withdrawmethod.max}</p>
                                         </div>  
                                     </div>
+                                    <Link to='/register'>
                                     <button className="bg-violet-200 text-center w-full py-3 rounded-md mt-3 text-violet-950">Invest Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         ))

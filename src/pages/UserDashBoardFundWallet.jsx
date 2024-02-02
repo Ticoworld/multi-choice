@@ -106,7 +106,8 @@ const UserDashBoardFundWallet = () => {
           <h3 className="text-violet-950 font-semibold text-4xl">Deposit Methods</h3>
           <p className="text-xs font-medium py-2 text-gray-700">Choose a deposit method to add money.</p>
         </div>
-        <div className="grid grid-cols-3 gap-8 py-16">
+        <div className='flex justify-center items-center min-h-screen mt-5'>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16">
           {withdrawMethods.map(withdraw => (
             <div key={withdraw.id}>
               <div className="h-full rounded-md shadow p-10">
@@ -133,6 +134,7 @@ const UserDashBoardFundWallet = () => {
             </div>
           ))}
         </div>
+        </div>
         <Link to="/deposit">
           <div className="text-violet-100 bg-violet-950 rounded-md text-center w-60 py-2 font-semibold m-auto flex items-center justify-center gap-3">
             <p>Deposit History</p> <div className="text-3xl"><IoIosArrowRoundForward /></div> </div>
@@ -140,7 +142,7 @@ const UserDashBoardFundWallet = () => {
       </div>
       {isModalOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center modal-container">
-          <div className="modal shadow-md bg-white w-2/5 p-4 rounded-md">
+          <div className="modal shadow-md bg-white w-350 p-4 rounded-md">
             <div className="modal-content">
               <div className="flex items-center justify-between pb-3">
                 <div>
@@ -151,19 +153,19 @@ const UserDashBoardFundWallet = () => {
                 <div className="text-indigo-950 font-bold text-3xl cursor-pointer" onClick={closeModal}><HiXMark /></div>
               </div>
               <div className="underline3" />
-              <div className="flex justify-between items-center py-10">
-                <form>
-                  <input               
-                    type="number" 
-                    placeholder='0.00'
-                    value={depositAmount}
-                    onChange={(e)=>{
-                    setDepositAmount(parseInt(e.target.value))
-                  }}
-                   className="sm outline outline-1 outline-gray-400 w-470 py-2 rounded-sm text-md px-3" />
-                </form>
-                <p className="bg-gray-400 font-bold usd">USD</p>
-              </div>
+              <div className="flex justify-between items-center py-10 w-320">
+                  <form className="flex-grow">
+                    <input
+                      type="number" 
+                      placeholder='0.00'
+                      value={depositAmount}
+                      onChange={(e) => setDepositAmount(parseInt(e.target.value))}
+                      className="sm outline outline-1 outline-gray-400 py-2 rounded-sm text-md px-3 w-full"
+                    />
+                  </form>
+                  <p className="bg-gray-400 font-bold usd" style={{ width: '40px' }}>USD</p>
+                </div>
+
               <div className="underline3" />
               <div className="flex items-center justify-end pt-7">
                 <div className="flex gap-4">
@@ -197,7 +199,7 @@ const UserDashBoardFundWallet = () => {
       )}
 {CheckOutModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center modal-container">
-          <div className="modal shadow-md bg-white w-2/5 p-4 rounded-md text-center">
+          <div className="modal shadow-md bg-white w-320 p-4 rounded-md text-center">
             <div className="modal-content">
               <div className="">
                 <img src={modalContent.imageSrc} alt="" className="w-40 m-auto py-2" />
@@ -216,7 +218,7 @@ const UserDashBoardFundWallet = () => {
               </button>
             </div>
           </div>
-          <BsArrowLeftCircle className="text-violet-50 font-extrabold text-4xl absolute top-2 left-2 cursor-pointer" onClick={()=>{
+          <BsArrowLeftCircle className="md:text-violet-50 text-violet-950 font-extrabold text-4xl absolute top-2 left-2 cursor-pointer" onClick={()=>{
             setIsModalOpen(true)
             setCheckOutModal(false)
           }}/>

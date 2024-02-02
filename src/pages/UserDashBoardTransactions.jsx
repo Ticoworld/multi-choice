@@ -35,7 +35,6 @@ const UserDashBoardTransactions = () => {
       <Header />
       <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
-
           {loading ? (
             <Loader /> // Display Loader when data is being fetched
           ) : transactionHistory !== undefined && transactionHistory.length > 0 ? (
@@ -51,10 +50,10 @@ const UserDashBoardTransactions = () => {
               <tbody>
                 {transactionHistory.map(transaction => (
                   <tr key={transaction.id} className="border border-gray-300 text-center">
-                    <td className="border border-gray-300 px-4 py-2">{transaction.type}</td>
-                    <td className="border border-gray-300 px-4 py-2">${transaction.amount}</td>
-                    <td className="border border-gray-300 px-4 py-2">{transaction.date}</td>
-                    <td className="border border-gray-300 px-4 py-2">${transaction.balance}</td>
+                    <td className="border border-gray-300 px-1 py-2">{transaction.type}</td>
+                    <td className="border border-gray-300 px-1 py-2">${transaction.amount}</td>
+                    <td className="border border-gray-300 px-1 py-2">{transaction.date}</td>
+                    <td className="border border-gray-300 px-1 py-2">${transaction.balance}</td>
                   </tr>
                 ))}
               </tbody>
@@ -70,7 +69,6 @@ const UserDashBoardTransactions = () => {
               </Link>
             </div>
           )}
-
         </div>
       </div>
     </div>

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import {BiCog, BiExit, BiLock, BiUser} from 'react-icons/bi'
+import {BiCog, BiExit, BiLock, BiUser, BiChevronDown} from 'react-icons/bi'
 import { FaAngleDown } from "react-icons/fa";
 import { HiMiniXMark } from "react-icons/hi2";
+import {RiLuggageDepositLine} from 'react-icons/ri'
+import {AiOutlineStock} from 'react-icons/ai'
+import { GrTransaction } from "react-icons/gr";
+import {GiReceiveMoney} from 'react-icons/gi'
+import {RxDashboard} from 'react-icons/rx'
+import {FaUserFriends} from 'react-icons/fa'
 import { useState } from "react";
 // import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
@@ -13,6 +19,7 @@ const Header = () => {
   const [profileInfo, setProfileInfo] = useState(false)
   const userFirstName = userData?.firstname || '';
   const userEmail = userData?.email || '';
+  const userBal = userData?.funded || '';
   const navigate = useNavigate()
 
 
@@ -40,7 +47,8 @@ const Header = () => {
   },[])
   return (
     <div className=" sticky top-0">
-        <div className="flex items-center justify-end px-3 py-4 bg-gray-100"> 
+        <div className="flex items-center justify-end px-3 py-4 bg-gray-100">
+          <div className="hidden lg:flex">
                 <Link to='/dashboard' className="px-6">Dashboard</Link>
                 <Link to="/fundwallet" className="px-6">Fund Wallet</Link>
                 <Link to='/invest' className="px-6">Invest</Link>
@@ -48,6 +56,7 @@ const Header = () => {
                 <Link to='/transactions' className="px-6">Transactions</Link>
                 <Link to='/referrals' className="px-6">Referrals</Link>
                 <Link to='/irainvest' className="px-6">IRA</Link>
+          </div>
                 <div className="rounded-full w-32 flex items-center justify-between shadow py-2 px-1 cursor-pointer gap-3" onClick={()=>{
                   setProfileInfo(true);
                 }}>
@@ -56,7 +65,7 @@ const Header = () => {
                 <div className="text-lg font-normal text-gray-600"><FaAngleDown/></div>
                 </div>
         </div>
-          <div className={profileInfo ?`profile-modal h-96 rounded-md shadow py-4 right-0 top-2 absolute bg-white w-64` : `w-0 hidden`}>
+          <div className={profileInfo ?`profile-modal h rounded-md shadow py-4 right-0 top-2 absolute bg-white w-64` : `w-0 hidden`}>
             <div className="flex items-center justify-start gap-2 px-4 pb-2 cursor-pointer" onClick={()=>{
               setProfileInfo(false)
             }}>
@@ -72,10 +81,47 @@ const Header = () => {
             </div>
             <div className="text-gray-600 p-4">
               <p className="text-violet-400">Total Amount</p>
-              <p className="text-violet-700 text-xl font-semibold">$0.00 USD</p>
+              <p className="text-violet-700 text-xl font-semibold">{userBal} USD</p>
               <p className=" text-sm">Referral Bonus <span>$0.00 USD</span></p>
             </div>
+            <div className="lg:hidden">
               <div className="underline3"/>
+                <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                      <RxDashboard />
+                      <Link to='/dashboard' className="">Dashboard</Link>
+                </div>
+                <div className="underline3"/>
+                <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                  <GiReceiveMoney/>
+                  <Link to="/fundwallet" className="">Fund Wallet</Link>
+                </div>
+                <div className="underline3"/>
+                <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                  <AiOutlineStock/>
+                  <Link to='/invest' className="">Invest</Link>
+                </div>
+                <div className="underline3"/>
+                  <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                    <RiLuggageDepositLine/>
+                    <Link to='/withdraw' className="">Withdraw</Link>
+                  </div>
+                  <div className="underline3"/>
+                  <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                    <GrTransaction/>
+                    <Link to='/transactions' className="">Transactions</Link>
+                  </div>
+                  <div className="underline3"/>
+                  <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                    <FaUserFriends/>
+                    <Link to='/referrals' className="">Referrals</Link>
+                  </div>
+                  <div className="underline3"/>
+                  <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
+                  <AiOutlineStock/> 
+                    <Link to='/irainvest' className="">IRA</Link>
+                  </div>
+                  <div className="underline3"/>
+            </div>
               <Link to='/myprofile'>
                   <div className="flex items-center justify-start gap-2 px-4 py-2 cursor-pointer">
                     <BiCog/>

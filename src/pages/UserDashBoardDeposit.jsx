@@ -1,22 +1,26 @@
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 const UserDashBoardDeposit = () => {
-  const [depositHistory, setDepositHistory] = useState()
+  const [depositHistory, setDepositHistory] = useState([])
+  const [loading, setLoading] = useState(true); 
   useEffect(() => {
     const getData = async () => {
       try {
-        const req = await fetch(`https://multi-chain-server.vercel.app/api/getData`, {
+        const response = await fetch(`https://multi-chain-server.vercel.app/api/getData`, {
           headers: {
             'x-access-token': localStorage.getItem('token'),
           },
         });
-        const res = await req.json();
-        if (res.deposit) {
-          setDepositHistory(res.deposit);
-          console.log(depositHistory);
+        const data = await response.json();
+        if (data.deposit) {
+          setDepositHistory(data.deposit);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
       }
     };
   
@@ -28,8 +32,10 @@ const UserDashBoardDeposit = () => {
       <Header />
       <div className="lg:px-28 px-10 py-12 pb-32">
         <div className="flex items-center justify-center flex-col">
-  
-          {depositHistory !== undefined && depositHistory.length > 0 ? (
+        {
+          loading ? (
+            <Loader />
+          ) : depositHistory !== undefined && depositHistory.length > 0 ? (
             <table className="min-w-full border border-gray-300">
               <thead>
                 <tr className="bg-violet-700 text-white">
@@ -52,12 +58,13 @@ const UserDashBoardDeposit = () => {
             <>
               <img src="/Data_PortabilityPrivacy_BANNER_003.gif" alt="" className="w-500 py-24" />
               <p className="text-gray-700 text-center">You have not performed any transactions yet. Click below to deposit and start transacting.</p>
-              <div className="text-violet-50 bg-violet-800 rounded-md text-center w-2/3 py-2 font-semibold m-auto flex items-center justify-center gap-3 my-7">
-                <p>Deposit</p>
-              </div>
+              <Link to="/fundwallet">
+                <div className="text-violet-50 bg-violet-800 rounded-md text-center w-2/3 py-2 font-semibold m-auto flex items-center justify-center gap-3 my-7">
+                  <p>Deposit</p>
+                </div>
+              </Link>
             </>
-          )}
-  
+          )}  
         </div>
       </div>
     </div>
